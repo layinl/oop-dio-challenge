@@ -1,5 +1,8 @@
 package me.dio.challenge;
 
+/**
+ * The Course class
+ */
 public class Course extends Content {
 	private int workload;
 
@@ -12,6 +15,10 @@ public class Course extends Content {
 		this.workload = workload;
 	}
 
+	/**
+	 * Calculates XP of this content
+	 * @return the total XP of this course
+	 */
 	public int calculateXP() {
 		return DEFAULT_XP + 30;
 	}

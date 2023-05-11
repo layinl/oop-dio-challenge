@@ -2,6 +2,9 @@ package me.dio.challenge;
 
 import java.time.LocalDate;
 
+/**
+ * The Mentoring class
+ */
 public class Mentoring extends Content {
 
 	private String title;
@@ -17,8 +20,12 @@ public class Mentoring extends Content {
 		this.date = date;
 	}
 
+	/**
+	 * Calculates XP of this content
+	 * @return the total XP of this mentoring
+	 */
 	public int calculateXP() {
-		return DEFAULT_XP + 40;
+		return DEFAULT_XP + 30;
 	}
 
 	public LocalDate getDate() {

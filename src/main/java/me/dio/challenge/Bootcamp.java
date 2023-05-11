@@ -6,18 +6,29 @@ import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
+/**
+ * This class represents all the contents and enrolled devs in their respective bootcamps
+ */
 public class Bootcamp {
 
 	private String name;
 	private String description;
 	private LocalDate startDate;
 	private LocalDate finishDate;
-	private Set<Content> contents;
-	private Set<Dev> devs;
+	private Set<Content> contents = new LinkedHashSet<>();
+	private Set<Dev> devs = new HashSet<>();
 
 	public Bootcamp() {
-		contents = new LinkedHashSet<>();
-		devs = new HashSet<>();
+	}
+
+	public Bootcamp(String name, String description, LocalDate startDate, Set<Content> contents,
+	                Set<Dev> devs) {
+		this.name = name;
+		this.description = description;
+		this.startDate = startDate;
+		this.finishDate = startDate.plusDays(45);
+		this.contents.addAll(contents);
+		this.devs.addAll(devs);
 	}
 
 	public String getName() {
@@ -64,7 +75,7 @@ public class Bootcamp {
 		return devs;
 	}
 
-	public void setDev(Set<Dev> devs) {
+	public void setDevs(Set<Dev> devs) {
 		this.devs = devs;
 	}
 
